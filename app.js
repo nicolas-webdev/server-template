@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 app.get("/", function (req, res) {
-  res.render("home", { content: homeStartingContent, posts: savedPosts });
+  res.sendFile(__dirname + "./index.html");
 });
 
 app.listen(process.env.PORT || 3000, function () {
